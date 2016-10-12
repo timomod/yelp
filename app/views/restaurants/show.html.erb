@@ -1,0 +1,32 @@
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+
+      <h3>Name:</h3>
+      <p><%= @restaurant.name %></p>
+
+      <h3>Address:</h3>
+      <p><%= @restaurant.address %></p>
+
+      <h3>Description:</h3>
+      <p><%= @restaurant.description %></p>
+
+      <h3>Stars:</h3>
+      <p> <%= @restaurant.stars %></p>
+
+
+      <ul>
+        <% @restaurant.reviews.each do |review| %>
+          <li><%= review.content %></li>
+        <%end%>
+      </ul>
+
+      <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
+      <%= link_to 'Back', restaurants_path %> |
+      <%= link_to 'Add review', new_restaurant_review_path(@restaurant) %>
+
+</div>
+</div>
+</div>
